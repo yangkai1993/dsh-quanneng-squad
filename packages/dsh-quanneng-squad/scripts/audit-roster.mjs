@@ -17,7 +17,7 @@ const warn = [];
 // 1) profile 默认模型（agent-default-model 补丁项）
 const dm = readDefaultModel();   // 统一适配层：自适应 profile 位置与配置形态
 const profileDefault = dm ? dm.full : null;
-if (!profileDefault) warn.push('profile 默认模型不可读/为空：期望路由未知（不限制模型，仅提示）');
+if (!profileDefault && !process.env.QUANNENG_EXPECTED_MODEL) warn.push('profile 默认模型不可读/为空：期望路由未知（不限制模型，仅提示）'); // 已设期望值时无需 profile 提示（1.20.0 CI 隔离态）
 
 // 2) 期望路由（未给定期望时用 profile 默认值）
 const expected = process.env.QUANNENG_EXPECTED_MODEL || profileDefault;

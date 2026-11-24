@@ -178,7 +178,7 @@ describe('audit-roster does not restrict any model (user rule: squad works with 
   });
 
   test('real roster is accepted (all models allowed)', () => {
-    const r = run(['scripts/audit-roster.mjs']);
+    const r = run(['scripts/audit-roster.mjs'], { env: { ...process.env, QUANNENG_EXPECTED_MODEL: 'any-provider/any-model' } });
     assert.equal(r.status, 0, 'real roster must pass: ' + r.stdout + r.stderr);
   });
 });
