@@ -1,0 +1,92 @@
+{
+  "at": "2026-11-24T02:14:08.897Z",
+  "tokenConverged": false,
+  "singleFlightAge": null,
+  "panelTasks": {
+    "total": 0,
+    "inflight": [],
+    "failed": [],
+    "other": 0,
+    "readError": null
+  },
+  "gates": {
+    "seat-utilization": 0,
+    "audit-roster": 0,
+    "reflow-check": 0,
+    "stage-order": 0,
+    "drift-check": 0,
+    "dispatch-guard": 0,
+    "lead-scope-check": 0
+  },
+  "resultVerify": {
+    "exit": 0,
+    "gaps": []
+  },
+  "preVerify": {
+    "exit": 0,
+    "problems": []
+  },
+  "seatRolling": {
+    "window": 5,
+    "maxRound": 68,
+    "activeSeats": 14,
+    "idleSeats": [
+      "采风官",
+      "翰林学士"
+    ],
+    "coverage": "14/16"
+  },
+  "memorySla": {
+    "exit": 0,
+    "problems": [],
+    "pending": 2,
+    "decisions": 128
+  },
+  "inFlight": [
+    {
+      "seat": "架构经理",
+      "tok": "TK-68-08",
+      "status": "**待批准（staged）**：面板 Web Approve & Run 后投递"
+    },
+    {
+      "seat": "考功郎中",
+      "tok": "TK-68-01",
+      "status": "**待批准（staged）**：面板 Web Approve & Run 后投递"
+    }
+  ],
+  "expectedProbes": [
+    "auditNoSourceReturns501",
+    "reconTickSurfacesRealSchedulerTick"
+  ],
+  "java": {
+    "verdict": "unknown",
+    "failures": [],
+    "reports": 0,
+    "staleIgnored": 0
+  },
+  "freshness": {
+    "pulseHours": 0.2,
+    "briefHours": 166.3
+  },
+  "l4": {
+    "P-001": "codified",
+    "P-002": "codified",
+    "P-004": "codified",
+    "P-010": "codified",
+    "P-003": "codified",
+    "P-005": "codified",
+    "P-006": "codified",
+    "P-007": "codified",
+    "P-008": "codified",
+    "P-009": "codified",
+    "P-011": "codified",
+    "P-012": "codified",
+    "P-013": "codified",
+    "P-014": "rollout",
+    "P-015": "rollout"
+  },
+  "attention": [
+    "在途 TK-68-08(架构经理)",
+    "在途 TK-68-01(考功郎中)"
+  ]
+}

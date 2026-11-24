@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "patterns": [
+    "%SystemDrive%",
+    ".dsh-project-memory",
+    ".tmp-",
+    "*.bak-*",
+    "*.bak",
+    "assets/workspace/docs/squad/STATE.md",
+    "assets/L4-STATE.json",
+    "assets/file-index.json",
+    "scripts/**/*fixture*",
+    "scripts/**/run-tests.mjs",
+    "tests/**",
+    "expert-packs/**"
+  ],
+  "note": "命中任一模式即判发布污染，pack --check 红。"
+}

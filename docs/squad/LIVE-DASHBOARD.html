@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8"><title>全能小队 · L4 实况</title><style>
+body{font-family:system-ui,'Microsoft YaHei',sans-serif;margin:0;padding:20px;background:#0f1419;color:#d8dee9}
+h1{font-size:20px;color:#88c0d0;margin:0 0 6px}h2{font-size:15px;color:#a3be8c;border-bottom:1px solid #3b4252;padding-bottom:5px;margin:20px 0 8px}
+.sub{color:#7f8c9b;font-size:12px;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.card{background:#1b222b;border:1px solid #2e3440;border-radius:8px;padding:12px}
+.card b{display:block;font-size:11px;color:#7f8c9b}
+.card span{font-size:22px;color:#ebcb8b}
+table{width:100%;border-collapse:collapse;font-size:12px;background:#1b222b;border-radius:6px;overflow:hidden;margin-top:6px}
+th,td{text-align:left;padding:6px 9px;border-bottom:1px solid #2e3440}th{background:#242c38;color:#88c0d0}
+.ok{color:#a3be8c;font-weight:600}.warn{color:#ebcb8b;font-weight:600}.bad{color:#bf616a;font-weight:600}
+.note{background:#242c38;border-left:3px solid #ebcb8b;padding:10px 12px;font-size:12px;margin:10px 0}
+.honest{background:#3a2429;border-left:3px solid #bf616a;padding:10px 12px;font-size:12px;margin:10px 0}
+code{background:#2e3440;padding:1px 5px;border-radius:3px;color:#ebcb8b}</style></head><body>
+<h1>全能编程小队 · L4 自优化管线实况</h1>
+<div class="sub">第 41 轮 · 全部数字来自实跑（surefire / 五门 / 夹具 / L4-STATE.json）· 2026-11-12T07:10Z</div>
+<div class="grid">
+<div class="card"><b>五态提案</b><span>3</span></div>
+<div class="card"><b>已固化</b><span>0</span></div>
+<div class="card"><b>rollout</b><span>3</span></div>
+<div class="card"><b>夹具检查</b><span>21/21</span></div>
+<div class="card"><b>Java 测试</b><span>58/58</span></div>
+<div class="card"><b>release 链</b><span>19 步</span></div>
+<div class="card"><b>席位</b><span>16/16</span></div>
+<div class="card"><b>在途令牌</b><span>2</span></div>
+</div>
+<div class="honest"><b>诚实说明：我在这次建设中犯了两次假绿，都已熔断</b><br>
+① 首版 <code>facts.mjs</code> 把 <code>toyFixturePassed / canarySlotWritten / stableIterations / bodyWritten</code> 全部写死 <code>true</code>，用假事实把 3 条提案直接刷到 <code>codified</code>，还顺手把 VERSION 抬成 v3.0 —— 已回滚（删假状态、VERSION 复位 v2.7）。<br>
+② 迭代粒度从日期改成轮次后，同一轮被 <code>2026-11-12</code> 与 <code>round-40</code> 两种键各记一次，stableIterations 虚抬到 2 又刷出 codified —— 已熔断重置，引擎加 <code>normalizeIteration</code>（只接受 <code>round-N</code>），夹具补 4 条键规范检查。<br>
+所以<b>现在没有任何提案被「固化」</b>：固化必须再出现一个新的项目轮次且持续全绿，同日反复运行刷不出来（已用 release 链内重复运行验证 iter 不增长）。</div>
+<h2>L4 五态真实进度（机器态，非叙述）</h2>
+<table><tr><th>提案</th><th>层级</th><th>当前态</th><th>canary 绿</th><th>rollout 绿</th><th>已计迭代</th></tr><tr><td>P-001</td><td>process</td><td class="ok">rollout</td><td>1</td><td>1</td><td style="color:#7f8c9b">regression:round-40 / canary:round-40 / rollout:round-40</td></tr><tr><td>P-002</td><td>process</td><td class="ok">rollout</td><td>1</td><td>1</td><td style="color:#7f8c9b">regression:round-40 / canary:round-40 / rollout:round-40</td></tr><tr><td>P-004</td><td>parameter</td><td class="ok">rollout</td><td>1</td><td>1</td><td style="color:#7f8c9b">regression:round-40 / canary:round-40 / rollout:round-40</td></tr></table>
+<div class="note"><b>卡住的门槛</b>：三条提案都是 <code>stableIterations&lt;2</code> —— 需要 round-42（下一个真实项目轮次）复跑 <code>npm run l4:run</code> 持续全绿才能自然固化。</div>
+<h2>五门（默认阻断，无豁免）</h2>
+<table><tr><th>门</th><th>exit</th></tr><tr><td>seat-utilization</td><td class="ok">0</td></tr><tr><td>audit-roster</td><td class="ok">0</td></tr><tr><td>reflow-check</td><td class="ok">0</td></tr><tr><td>stage-order</td><td class="ok">0</td></tr><tr><td>drift-check</td><td class="ok">0</td></tr></table>
+<h2>在途（G-S4 关注项 D-6 / D-7）</h2>
+<table><tr><th>令牌</th><th>席位</th><th>任务</th><th>实测缺口</th></tr>
+<tr><td>TK-41-01</td><td>后端经理@v16</td><td>补 8 条管理路由</td><td>SnController 仅 3 条映射，缺 audit/metrics/alerts/centers/recon-tick/file-send/cert-userget/failover-probe</td></tr>
+<tr><td>TK-41-02</td><td>后端经理@v16</td><td>Node 幂等释放语义</td><td>orchestrator 只有 putIfAbsent(claim)，无验签失败释放、无终态覆写</td></tr></table>
+</body></html>

@@ -1,0 +1,19 @@
+{
+  "name": "quanneng-squad-marketplace",
+  "owner": {
+    "name": "dsh-quanneng-squad"
+  },
+  "metadata": {
+    "description": "全能编程小队插件分发清单（生成物）",
+    "version": "1.20.0"
+  },
+  "plugins": [
+    {
+      "name": "dsh-quanneng-squad",
+      "source": "./",
+      "description": "全能编程小队",
+      "version": "1.20.0",
+      "category": "multi-agent"
+    }
+  ]
+}

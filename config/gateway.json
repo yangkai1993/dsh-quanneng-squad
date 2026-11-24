@@ -1,0 +1,76 @@
+{
+  "identity": {
+    "version": "1.0.0",
+    "appType": "01",
+    "appId": "LOCAL_SANDBOX_0001",
+    "signId": "888888",
+    "userId": "888888"
+  },
+  "up": {
+    "channel": "mock",
+    "centers": [
+      {
+        "name": "center-a",
+        "url": "http://127.0.0.1:18950/api/trans.do",
+        "weight": 100
+      },
+      {
+        "name": "center-b",
+        "url": "http://127.0.0.1:18960/api/trans.do",
+        "weight": 0
+      }
+    ],
+    "timeout": {
+      "connectMs": 3000,
+      "readMs": 9000,
+      "totalMs": 10000
+    },
+    "gzip": {
+      "enabled": true,
+      "minBytes": 4096
+    }
+  },
+  "crypto": {
+    "signMethod": "SM2",
+    "encryptMethod": "SM4",
+    "bodyBasis": "RAW_JSON",
+    "encryptData": {
+      "enabled": true,
+      "sensitiveFields": [
+        "snCode",
+        "imei1",
+        "imei2",
+        "addr",
+        "gps"
+      ]
+    }
+  },
+  "north": {
+    "port": 18952,
+    "auth": {
+      "mode": "mtls+jwt",
+      "jwtSecret": "LOCAL_ONLY_CHANGE_ME",
+      "tenants": [
+        "LOCAL_SANDBOX_0001"
+      ]
+    },
+    "rateLimitPerSec": 200
+  },
+  "mock": {
+    "port": 18950
+  },
+  "inbound": {
+    "port": 18951
+  },
+  "response": {
+    "acceptCodes": [
+      "0000000000",
+      "200"
+    ],
+    "successCodePolicy": "BOTH"
+  },
+  "reliability": {
+    "degrade": "fail-closed",
+    "occupancyReconMode": "PENDING_RECON"
+  }
+}

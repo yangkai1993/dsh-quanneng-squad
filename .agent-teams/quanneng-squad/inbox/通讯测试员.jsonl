@@ -1,0 +1,3 @@
+{"id":"5b6f5b47-a54d-48f0-bfc2-98864f10067d","from":"captain","to":"通讯测试员","content":"通讯链路测试：收到请回复 in place。","ts":1795154180175,"deliveredAt":1795154180347,"readAt":1795154180667}
+{"id":"4de9d99b-5bc0-48a0-8403-6c268f338c5d","from":"captain","to":"通讯测试员","content":"通讯汇报验证：请回复一句「已收到，链路正常」并注明你的名字。","ts":1795155056338,"deliveredAt":1795155056432,"readAt":1795155057339}
+{"id":"bfecc0ba-1ac7-41a1-b25c-5ba906311227","from":"captain","to":"通讯测试员","content":"【并发冲突避免】架构迁移由主对话 lead 主线执行中（AGENTS §1 并发铁律），请勿再改 AGENTS.md/verify.mjs/autopilot/presets 等文件，避免覆写。你的任务卡请标记 hand_back 并停止。","ts":1795156092931,"deliveredAt":1795156093042,"readAt":1795156093394}

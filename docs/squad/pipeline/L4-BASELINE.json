@@ -1,0 +1,22 @@
+{
+  "capturedAt": "2026-11-12T07:42:55.339Z",
+  "project": "SN26 以旧换新网关 + dsh-quanneng-squad 全能小队",
+  "javaTests": 58,
+  "javaTestsSource": "surefire 实算",
+  "stateRounds": 45,
+  "briefs": 16,
+  "decisions": 63,
+  "resultVerifyItems": 16,
+  "resultVerifyGaps": 0,
+  "evidence": [
+    "surefire",
+    "STATE.md",
+    "briefs/",
+    "DECISIONS.jsonl",
+    "G-S7.md"
+  ],
+  "conclusion": "基线由脚本动态生成；result-verify 收紧后存在真实缺口（见 gapItems）",
+  "nodeTests": 47,
+  "nodeTestsSource": "node --test 实算（gateway-java 剥离后的现役基线）",
+  "retirementNote": "2026-11-23 gateway-java 剥离：javaTests=58 为历史 S8 基线留痕，现役点火基线=nodeTests 47"
+}

@@ -1,0 +1,26 @@
+---
+name: quickstart
+description: Squad skill. Use when a new user first installs the plugin and asks how to start the squad or needs a dispatch token.
+---
+
+# quickstart · 新用户两步上手
+
+> 渐进披露：本页只放「是什么 / 何时用 / 一条命令」；细节见 references 列出的真源文件。
+
+## 是什么
+
+新用户两步上手——属于全能编程小队插件的日常技能。
+
+## 何时用
+
+当新用户首次安装插件，问如何启动小队或要派活令牌时使用。
+
+## 一条命令
+
+```bash
+node scripts/squadctl.mjs ux:quickstart
+```
+
+## 细节真源
+
+docs/squad/ROSTER-16.md；scripts/ux/quickstart.mjs

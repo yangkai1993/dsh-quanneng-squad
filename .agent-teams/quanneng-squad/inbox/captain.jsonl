@@ -1,0 +1,4 @@
+{"id":"2c995ac5-024a-4664-a75c-345706966390","from":"通讯测试员","to":"captain","content":"通讯链路测试：收到确认。通讯测试员在线，链路双向畅通，随时可接任务。","ts":1795154192620,"deliveredAt":1795154192624,"readAt":1795154212636}
+{"id":"b367d238-df6f-4a41-8dc8-ca15dfabd629","from":"通信验证员B","to":"captain","content":"已收到，链路正常。——通信验证员B","ts":1795155063190,"deliveredAt":1795155063193,"readAt":1795155092980}
+{"id":"e5749026-70e4-448f-9e7e-105fdbbfd507","from":"通讯测试员","to":"captain","content":"已收到，链路正常。——通讯测试员","ts":1795155067021,"deliveredAt":1795155067026,"readAt":1795155092980}
+{"id":"90a2ef90-7e00-4fe5-886f-4661811095ca","from":"通讯测试员","to":"captain","content":"【hand_back 确认】收到并发冲突指示：架构迁移由主对话 lead 主线执行，本席不再触碰 AGENTS.md/verify.mjs/autopilot/presets 等文件。已检查任务板：名下无在途任务卡（team_task 列表为空），无未闭合尝试，无需 hand_back 动作。通讯测试员停止任何写操作，转为待命，等待新任务分配。","ts":1795156112797,"deliveredAt":1795156112800,"readAt":1795156113416}

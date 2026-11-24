@@ -1,0 +1,161 @@
+{
+  "updatedAt": "2026-11-23T09:39:46.229Z",
+  "entries": {
+    "backend-engineer-v1.md": {
+      "digest": "9d7ee1844aaa358e",
+      "score": 1,
+      "pMarks": 32,
+      "length": 150
+    },
+    "biz-architect-v1.md": {
+      "digest": "bdc71d128479a0aa",
+      "score": 0.525,
+      "pMarks": 0,
+      "length": 92
+    },
+    "biz-architect-v2.md": {
+      "digest": "150da5abdb6d6f67",
+      "score": 0.9,
+      "pMarks": 6,
+      "length": 111
+    },
+    "devops-engineer-v1.md": {
+      "digest": "db92fed73c2b3cb2",
+      "score": 0.525,
+      "pMarks": 0,
+      "length": 91
+    },
+    "devops-engineer-v2.md": {
+      "digest": "cad98bd32827b7fb",
+      "score": 1,
+      "pMarks": 12,
+      "length": 120
+    },
+    "e2e-engineer-v1.md": {
+      "digest": "671c76661ccf99e0",
+      "score": 0.525,
+      "pMarks": 0,
+      "length": 91
+    },
+    "e2e-engineer-v2.md": {
+      "digest": "18907824bab26110",
+      "score": 1,
+      "pMarks": 12,
+      "length": 120
+    },
+    "qa-engineer-v1.md": {
+      "digest": "555722a6e9d5616a",
+      "score": 0.525,
+      "pMarks": 0,
+      "length": 93
+    },
+    "qa-engineer-v2.md": {
+      "digest": "22751ed4f2cfbfa2",
+      "score": 0.9,
+      "pMarks": 6,
+      "length": 112
+    },
+    "qa-engineer-v3.md": {
+      "digest": "f5d24ba21e1e2a77",
+      "score": 1,
+      "pMarks": 10,
+      "length": 123
+    },
+    "qa-engineer-v4.md": {
+      "digest": "26e3866cee554ab5",
+      "score": 1,
+      "pMarks": 14,
+      "length": 129
+    },
+    "qa-engineer-v5.md": {
+      "digest": "77d4c6fef8b46128",
+      "score": 1,
+      "pMarks": 22,
+      "length": 141
+    },
+    "qa-engineer-v6.md": {
+      "digest": "85908d9e1021845d",
+      "score": 1,
+      "pMarks": 29,
+      "length": 154
+    },
+    "qa-engineer-v7.md": {
+      "digest": "95f8a04f14552af0",
+      "score": 1,
+      "pMarks": 33,
+      "length": 162
+    },
+    "requirements-analyst-v1.md": {
+      "digest": "628f3cf7e66d0db9",
+      "score": 0.525,
+      "pMarks": 0,
+      "length": 90
+    },
+    "requirements-analyst-v2.md": {
+      "digest": "ce621bcb4a365494",
+      "score": 1,
+      "pMarks": 9,
+      "length": 114
+    },
+    "security-auditor-v1.md": {
+      "digest": "07cfcb1b3935e313",
+      "score": 0.525,
+      "pMarks": 0,
+      "length": 92
+    },
+    "security-auditor-v2.md": {
+      "digest": "cbcf93b591220f1d",
+      "score": 1,
+      "pMarks": 9,
+      "length": 116
+    },
+    "security-auditor-v3.md": {
+      "digest": "b7080264049058eb",
+      "score": 1,
+      "pMarks": 13,
+      "length": 126
+    },
+    "security-auditor-v4.md": {
+      "digest": "3070de34f40840d4",
+      "score": 1,
+      "pMarks": 17,
+      "length": 132
+    },
+    "security-auditor-v5.md": {
+      "digest": "a180fcd4dc6a9323",
+      "score": 1,
+      "pMarks": 25,
+      "length": 144
+    },
+    "security-auditor-v6.md": {
+      "digest": "634ab60368f5f8c7",
+      "score": 1,
+      "pMarks": 29,
+      "length": 150
+    },
+    "security-auditor-v7.md": {
+      "digest": "d6d5375c77ad7aa2",
+      "score": 1,
+      "pMarks": 33,
+      "length": 157
+    },
+    "sys-architect-v1.md": {
+      "digest": "0a34d4d0fb8dc399",
+      "score": 0.525,
+      "pMarks": 0,
+      "length": 89
+    },
+    "sys-architect-v2.md": {
+      "digest": "cb272e7c70b5551d",
+      "score": 0.9,
+      "pMarks": 6,
+      "length": 108
+    },
+    "ui-designer-v1.md": {
+      "digest": "6f8f94dcb5420959",
+      "score": 1,
+      "pMarks": 26,
+      "length": 144
+    }
+  }
+}

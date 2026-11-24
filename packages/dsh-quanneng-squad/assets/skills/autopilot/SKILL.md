@@ -1,0 +1,26 @@
+---
+name: autopilot
+description: Squad skill. Use when the user wants to automate a squad round: plan tokens, dispatch jobs, or collect reports.
+---
+
+# autopilot · 自动编排五动作
+
+> 渐进披露：本页只放「是什么 / 何时用 / 一条命令」；细节见 references 列出的真源文件。
+
+## 是什么
+
+自动编排五动作——属于全能编程小队插件的日常技能。
+
+## 何时用
+
+当用户要自动化一轮小队流程：登记令牌、派活计划或收口回报时使用。
+
+## 一条命令
+
+```bash
+node scripts/squadctl.mjs autopilot:plan|apply|report|dispatch|collect
+```
+
+## 细节真源
+
+scripts/squad-autopilot.mjs；事件源收口（1.15.0）

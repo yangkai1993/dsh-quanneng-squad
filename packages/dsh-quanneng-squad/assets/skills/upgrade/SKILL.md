@@ -1,0 +1,26 @@
+---
+name: upgrade
+description: Squad skill. Use when the user wants to upgrade the plugin to a newer version safely.
+---
+
+# upgrade · 安全升级五步
+
+> 渐进披露：本页只放「是什么 / 何时用 / 一条命令」；细节见 references 列出的真源文件。
+
+## 是什么
+
+安全升级五步——属于全能编程小队插件的日常技能。
+
+## 何时用
+
+当用户想安全升级插件到新版本时使用。
+
+## 一条命令
+
+```bash
+node scripts/squadctl.mjs upgrade
+```
+
+## 细节真源
+
+scripts/delivery/upgrade.mjs；scripts/delivery/lifecycle.mjs

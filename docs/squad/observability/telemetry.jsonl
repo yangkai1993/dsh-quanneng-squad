@@ -1,0 +1,5 @@
+{"ts":"2026-11-23T07:48:12.889Z","type":"l3-p0","detail":"\"体验层落地\""}
+{"ts":"2026-11-23T07:51:24.170Z","type":"l5-p1","detail":"\"可观测层落地\""}
+{"ts":"2026-11-24T01:57:49.260Z","seat":"后端经理","type":"dispatch","usage":{"inputTokens":1200,"outputTokens":800,"durationMs":4500}}
+{"ts":"2026-11-24T01:57:49.264Z","seat":"御史大夫","type":"gate"}
+{"ts":"2026-11-24T01:57:49.264Z","seat":"unknown","type":"generic"}

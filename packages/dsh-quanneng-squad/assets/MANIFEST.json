@@ -1,0 +1,33 @@
+{
+  "version": "1.0.0",
+  "docs": [
+    "全能编程小队-落地手册.md",
+    "AGENTS.md",
+    "docs/squad/CONSTITUTION.md",
+    "docs/squad/ROSTER-16.md",
+    "docs/squad/TEAM-CHARTER.md",
+    "docs/squad/ORG-CHART.md",
+    "docs/squad/INTERACTION.md",
+    "docs/squad/FUNCTIONAL-MATRIX.md",
+    "docs/squad/ARCH-REDESIGN-cap8.md",
+    "docs/squad/ARCH-HYBRID-agents-experts.md",
+    "docs/squad/FULL-16-ONLINE.md",
+    "squad-toolkit/VERSION.md",
+    "squad-toolkit/METRICS.md",
+    "docs/squad/STATE.md",
+    "docs/squad/TRACE.md"
+  ],
+  "dirs": [
+    "squad-toolkit/templates",
+    "squad-toolkit/roles",
+    "expert-packs",
+    "docs/squad/dispatch",
+    "docs/squad/inbox",
+    "docs/squad/gates",
+    "docs/squad/journal",
+    "docs/squad/audit",
+    "docs/squad/pipeline",
+    "docs/squad/intel",
+    "docs/squad/prompts"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "dsh-quanneng-squad",
+  "description": "全能编程小队：16 席位朝廷制多智能体编排（Event Sourcing 轮次真源 + 11 门机器门禁）",
+  "version": "1.20.0",
+  "author": {
+    "name": "YG / squad-lead"
+  },
+  "keywords": [
+    "multi-agent",
+    "orchestration",
+    "squad",
+    "governance"
+  ]
+}

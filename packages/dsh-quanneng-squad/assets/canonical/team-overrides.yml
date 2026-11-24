@@ -1,0 +1,51 @@
+# ── 全编 16 人全员在线 ───────────────────────────────────────────────
+- id: agent-teams
+  name: '@nanmicoder/dsh-agent-teams'
+  config:
+    stateDir: .agent-teams
+    memberProvider: spawn
+    maxMembers: 16
+    memberMaxDepth: 0
+    profiles:
+      quanneng-16:
+        description: 全能编程小队 · 全编 16 人全员在线
+        members:
+          - name: 需求经理
+            role: 规划域·需求基线
+          - name: 产品经理
+            role: 规划域·PRD验收
+          - name: 架构经理
+            role: 规划域·契约与ADR
+          - name: 前端经理
+            role: 实现域·前端
+          - name: 后端经理
+            role: 实现域·后端
+          - name: 御史大夫
+            role: 御史台·独立监察
+          - name: 运维经理
+            role: 运维域·部署监控
+          - name: 交付发布经理
+            role: 运维域·发布
+          - name: 测试经理
+            role: 质量域·测试
+          - name: 给事中
+            role: 门下省·科抄封驳
+          - name: 考功郎中
+            role: 吏部·度量演进
+          - name: 起居注官
+            role: 翰林·记注保鲜
+          - name: 采风官
+            role: 谋断·情报
+          - name: 集贤学士
+            role: 谋断·风暴
+          - name: 翰林学士
+            role: 谋断·提示词会诊
+          - name: 太傅
+            role: 谋断·票拟廷议
+
+# ── 宿主默认模型：不钉死任何 provider/model，跟随宿主 profile 当前路由 ──
+# P15：任何模型都可以；bundle 只声明插件存在，不写死 provider/model。
+# 用户当前模型由 profile 根 cordis.patch.yml 的 agent-default-model 块持有，install 覆盖时保留。
+- id: agent-default-model
+  name: "@deepseek-ai/dsh-agent-default-model"
+  config: {}

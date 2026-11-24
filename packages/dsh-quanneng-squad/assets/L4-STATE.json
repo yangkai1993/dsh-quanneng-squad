@@ -1,0 +1,2854 @@
+{
+  "proposals": {
+    "P-001": {
+      "id": "P-001",
+      "layer": "process",
+      "theme": "并发覆写防治（目录所有权表 + hand_back 铁律）",
+      "state": "codified",
+      "enteredAt": "2026-11-12T07:22:03.541Z",
+      "history": [
+        {
+          "from": "proposal",
+          "to": "regression",
+          "at": "2026-11-12T07:08:26.683Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 58
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-40",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "noFuseInCanary": true
+          },
+          "evidence": [
+            "toy-fixture",
+            "L4-BASELINE"
+          ]
+        },
+        {
+          "from": "regression",
+          "to": "canary",
+          "at": "2026-11-12T07:08:26.685Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 58
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-40",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": true,
+            "projectGreenNow": true,
+            "noFuseInCanary": true,
+            "scopeDeclared": true
+          },
+          "evidence": [
+            "VERSION.md canary=P-001"
+          ]
+        },
+        {
+          "from": "canary",
+          "to": "rollout",
+          "at": "2026-11-12T07:08:26.685Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 58
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-40",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "noFuseInCanary": true,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "iteration=round-40",
+            "greenIterations=1",
+            "recorded=true"
+          ]
+        },
+        {
+          "from": "rollout",
+          "to": "codified",
+          "at": "2026-11-12T07:19:24.853Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 58
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 1
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-42",
+            "canaryScopeDeclared": true,
+            "canarySlotWritten": false,
+            "projectGreenNow": false,
+            "noFuseInCanary": true,
+            "bodyWritten": true,
+            "stableIterations": 2,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "grep 并发冲突铁律=true",
+            "stableIterations=2"
+          ]
+        },
+        {
+          "from": "codified",
+          "to": "rollout(repair)",
+          "at": "2026-11-12T07:20:04.901Z",
+          "reason": "round-42 计绿时 drift-check 为红：非绿迭代，撤销固化（引擎已修 recordGreenIteration 计绿前置）"
+        },
+        {
+          "from": "rollout",
+          "to": "codified",
+          "at": "2026-11-12T07:22:03.540Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 58
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-42",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "noFuseInCanary": true,
+            "bodyWritten": true,
+            "stableIterations": 2,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "grep 并发冲突铁律=true",
+            "stableIterations=2"
+          ]
+        }
+      ],
+      "fuses": [],
+      "cooldownUntil": null,
+      "evidence": [
+        "toy-fixture",
+        "L4-BASELINE",
+        "VERSION.md canary=P-001",
+        "iteration=round-40",
+        "greenIterations=1",
+        "recorded=true",
+        "grep 并发冲突铁律=true",
+        "stableIterations=2",
+        "grep 并发冲突铁律=true",
+        "stableIterations=2"
+      ],
+      "canarySince": "2026-11-12T07:08:26.685Z",
+      "iterationsSeen": [
+        "regression:round-40",
+        "canary:round-40",
+        "rollout:round-40",
+        "rollout:round-42"
+      ],
+      "greenIterations": 1,
+      "stableIterations": 2
+    },
+    "P-002": {
+      "id": "P-002",
+      "layer": "process",
+      "theme": "需求工程前置闸（八件套）",
+      "state": "codified",
+      "enteredAt": "2026-11-12T07:22:03.541Z",
+      "history": [
+        {
+          "from": "proposal",
+          "to": "regression",
+          "at": "2026-11-12T07:08:26.686Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 58
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-40",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "noFuseInCanary": true
+          },
+          "evidence": [
+            "toy-fixture",
+            "L4-BASELINE"
+          ]
+        },
+        {
+          "from": "regression",
+          "to": "canary",
+          "at": "2026-11-12T07:08:26.686Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 58
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-40",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": true,
+            "projectGreenNow": true,
+            "noFuseInCanary": true,
+            "scopeDeclared": true
+          },
+          "evidence": [
+            "VERSION.md canary=P-001,P-002"
+          ]
+        },
+        {
+          "from": "canary",
+          "to": "rollout",
+          "at": "2026-11-12T07:08:26.686Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 58
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-40",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "noFuseInCanary": true,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "iteration=round-40",
+            "greenIterations=1",
+            "recorded=true"
+          ]
+        },
+        {
+          "from": "rollout",
+          "to": "codified",
+          "at": "2026-11-12T07:19:24.854Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 58
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 1
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-42",
+            "canaryScopeDeclared": true,
+            "canarySlotWritten": false,
+            "projectGreenNow": false,
+            "noFuseInCanary": true,
+            "bodyWritten": true,
+            "stableIterations": 2,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "grep 每次派活前提=true",
+            "stableIterations=2"
+          ]
+        },
+        {
+          "from": "codified",
+          "to": "rollout(repair)",
+          "at": "2026-11-12T07:20:04.901Z",
+          "reason": "round-42 计绿时 drift-check 为红：非绿迭代，撤销固化（引擎已修 recordGreenIteration 计绿前置）"
+        },
+        {
+          "from": "rollout",
+          "to": "codified",
+          "at": "2026-11-12T07:22:03.541Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 58
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-42",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "noFuseInCanary": true,
+            "bodyWritten": true,
+            "stableIterations": 2,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "grep 每次派活前提=true",
+            "stableIterations=2"
+          ]
+        }
+      ],
+      "fuses": [],
+      "cooldownUntil": null,
+      "evidence": [
+        "toy-fixture",
+        "L4-BASELINE",
+        "VERSION.md canary=P-001,P-002",
+        "iteration=round-40",
+        "greenIterations=1",
+        "recorded=true",
+        "grep 每次派活前提=true",
+        "stableIterations=2",
+        "grep 每次派活前提=true",
+        "stableIterations=2"
+      ],
+      "canarySince": "2026-11-12T07:08:26.686Z",
+      "iterationsSeen": [
+        "regression:round-40",
+        "canary:round-40",
+        "rollout:round-40",
+        "rollout:round-42"
+      ],
+      "greenIterations": 1,
+      "stableIterations": 2
+    },
+    "P-004": {
+      "id": "P-004",
+      "layer": "parameter",
+      "theme": "端到端结果核对 result-verify 纳入 release 链",
+      "state": "codified",
+      "enteredAt": "2026-11-12T07:22:03.541Z",
+      "history": [
+        {
+          "from": "proposal",
+          "to": "regression",
+          "at": "2026-11-12T07:08:26.686Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 58
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-40",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "noFuseInCanary": true
+          },
+          "evidence": [
+            "toy-fixture",
+            "L4-BASELINE"
+          ]
+        },
+        {
+          "from": "regression",
+          "to": "canary",
+          "at": "2026-11-12T07:08:26.687Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 58
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-40",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": true,
+            "projectGreenNow": true,
+            "noFuseInCanary": true,
+            "scopeDeclared": true
+          },
+          "evidence": [
+            "VERSION.md canary=P-001,P-002,P-004"
+          ]
+        },
+        {
+          "from": "canary",
+          "to": "rollout",
+          "at": "2026-11-12T07:08:26.687Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 58
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-40",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "noFuseInCanary": true,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "iteration=round-40",
+            "greenIterations=1",
+            "recorded=true"
+          ]
+        },
+        {
+          "from": "rollout",
+          "to": "codified",
+          "at": "2026-11-12T07:19:24.854Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 58
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 1
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-42",
+            "canaryScopeDeclared": true,
+            "canarySlotWritten": false,
+            "projectGreenNow": false,
+            "noFuseInCanary": true,
+            "bodyWritten": true,
+            "stableIterations": 2,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "grep result-verify.mjs=true",
+            "stableIterations=2"
+          ]
+        },
+        {
+          "from": "codified",
+          "to": "rollout(repair)",
+          "at": "2026-11-12T07:20:04.901Z",
+          "reason": "round-42 计绿时 drift-check 为红：非绿迭代，撤销固化（引擎已修 recordGreenIteration 计绿前置）"
+        },
+        {
+          "from": "rollout",
+          "to": "codified",
+          "at": "2026-11-12T07:22:03.541Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 58
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-42",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "noFuseInCanary": true,
+            "bodyWritten": true,
+            "stableIterations": 2,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "grep result-verify.mjs=true",
+            "stableIterations=2"
+          ]
+        }
+      ],
+      "fuses": [],
+      "cooldownUntil": null,
+      "evidence": [
+        "toy-fixture",
+        "L4-BASELINE",
+        "VERSION.md canary=P-001,P-002,P-004",
+        "iteration=round-40",
+        "greenIterations=1",
+        "recorded=true",
+        "grep result-verify.mjs=true",
+        "stableIterations=2",
+        "grep result-verify.mjs=true",
+        "stableIterations=2"
+      ],
+      "canarySince": "2026-11-12T07:08:26.687Z",
+      "iterationsSeen": [
+        "regression:round-40",
+        "canary:round-40",
+        "rollout:round-40",
+        "rollout:round-42"
+      ],
+      "greenIterations": 1,
+      "stableIterations": 2
+    },
+    "P-010": {
+      "id": "P-010",
+      "layer": "process",
+      "theme": "时刻监督/检验/改进三件套（dispatch-guard + lead-scope-check + supervise）",
+      "state": "codified",
+      "enteredAt": "2026-11-15T09:52:48.902Z",
+      "history": [
+        {
+          "from": "proposal",
+          "to": "regression",
+          "at": "2026-11-14T06:57:47.724Z",
+          "reason": "自动点火：玩具夹具 + S8 基线双前置满足",
+          "factsSnapshot": {
+            "toyFixturePassed": true,
+            "baselineCaptured": true
+          }
+        },
+        {
+          "from": "regression",
+          "to": "canary",
+          "at": "2026-11-15T09:45:41.997Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 1,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 1
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-48",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": true,
+            "projectGreenNow": false,
+            "greenLevel": "red",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "scopeDeclared": true
+          },
+          "evidence": [
+            "VERSION.md canary=P-003,P-005,P-006,P-007,P-008,P-009,P-010"
+          ]
+        },
+        {
+          "from": "canary",
+          "to": "rollout",
+          "at": "2026-11-15T09:49:47.331Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-48",
+            "canaryScopeDeclared": true,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "iteration=round-48",
+            "greenIterations=1",
+            "recorded=true"
+          ]
+        },
+        {
+          "from": "rollout",
+          "to": "codified",
+          "at": "2026-11-15T09:52:48.902Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-49",
+            "canaryScopeDeclared": true,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "bodyWritten": true,
+            "stableIterations": 2,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "grep 时刻监督三件套=true",
+            "stableIterations=2"
+          ]
+        }
+      ],
+      "fuses": [],
+      "cooldownUntil": null,
+      "evidence": [
+        "VERSION.md canary=P-003,P-005,P-006,P-007,P-008,P-009,P-010",
+        "iteration=round-48",
+        "greenIterations=1",
+        "recorded=true",
+        "grep 时刻监督三件套=true",
+        "stableIterations=2"
+      ],
+      "canarySince": "2026-11-15T09:45:41.997Z",
+      "iterationsSeen": [
+        "canary:round-48",
+        "rollout:round-48",
+        "rollout:round-49"
+      ],
+      "greenIterations": 1,
+      "stableIterations": 2
+    },
+    "P-003": {
+      "id": "P-003",
+      "layer": "process",
+      "theme": "G-REFLOW P3：叙述性声明被当作验收",
+      "state": "codified",
+      "enteredAt": "2026-11-15T13:07:02.129Z",
+      "history": [
+        {
+          "from": "proposal",
+          "to": "regression",
+          "at": "2026-11-14T06:57:47.724Z",
+          "reason": "自动点火：玩具夹具 + S8 基线双前置满足",
+          "factsSnapshot": {
+            "toyFixturePassed": true,
+            "baselineCaptured": true
+          }
+        },
+        {
+          "from": "regression",
+          "to": "canary",
+          "at": "2026-11-15T09:45:41.995Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 1,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 1
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-48",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": true,
+            "projectGreenNow": false,
+            "greenLevel": "red",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "scopeDeclared": true
+          },
+          "evidence": [
+            "VERSION.md canary=P-003"
+          ]
+        },
+        {
+          "from": "canary",
+          "to": "rollout",
+          "at": "2026-11-15T09:49:47.330Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-48",
+            "canaryScopeDeclared": true,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "iteration=round-48",
+            "greenIterations=1",
+            "recorded=true"
+          ]
+        },
+        {
+          "from": "rollout",
+          "to": "codified",
+          "at": "2026-11-15T13:07:02.129Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-49",
+            "canaryScopeDeclared": true,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "bodyWritten": true,
+            "stableIterations": 2,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "grep | P3 |=true",
+            "stableIterations=2"
+          ]
+        }
+      ],
+      "fuses": [],
+      "cooldownUntil": null,
+      "evidence": [
+        "VERSION.md canary=P-003",
+        "iteration=round-48",
+        "greenIterations=1",
+        "recorded=true",
+        "grep | P3 |=true",
+        "stableIterations=2"
+      ],
+      "canarySince": "2026-11-15T09:45:41.995Z",
+      "iterationsSeen": [
+        "canary:round-48",
+        "rollout:round-48",
+        "rollout:round-49"
+      ],
+      "greenIterations": 1,
+      "stableIterations": 2
+    },
+    "P-005": {
+      "id": "P-005",
+      "layer": "process",
+      "theme": "G-REFLOW P5：未验证的宿主/环境假设",
+      "state": "codified",
+      "enteredAt": "2026-11-15T13:07:02.129Z",
+      "history": [
+        {
+          "from": "proposal",
+          "to": "regression",
+          "at": "2026-11-14T06:57:47.724Z",
+          "reason": "自动点火：玩具夹具 + S8 基线双前置满足",
+          "factsSnapshot": {
+            "toyFixturePassed": true,
+            "baselineCaptured": true
+          }
+        },
+        {
+          "from": "regression",
+          "to": "canary",
+          "at": "2026-11-15T09:45:41.995Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 1,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 1
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-48",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": true,
+            "projectGreenNow": false,
+            "greenLevel": "red",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "scopeDeclared": true
+          },
+          "evidence": [
+            "VERSION.md canary=P-003,P-005"
+          ]
+        },
+        {
+          "from": "canary",
+          "to": "rollout",
+          "at": "2026-11-15T09:49:47.330Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-48",
+            "canaryScopeDeclared": true,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "iteration=round-48",
+            "greenIterations=1",
+            "recorded=true"
+          ]
+        },
+        {
+          "from": "rollout",
+          "to": "codified",
+          "at": "2026-11-15T13:07:02.129Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-49",
+            "canaryScopeDeclared": true,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "bodyWritten": true,
+            "stableIterations": 2,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "grep | P5 |=true",
+            "stableIterations=2"
+          ]
+        }
+      ],
+      "fuses": [],
+      "cooldownUntil": null,
+      "evidence": [
+        "VERSION.md canary=P-003,P-005",
+        "iteration=round-48",
+        "greenIterations=1",
+        "recorded=true",
+        "grep | P5 |=true",
+        "stableIterations=2"
+      ],
+      "canarySince": "2026-11-15T09:45:41.995Z",
+      "iterationsSeen": [
+        "canary:round-48",
+        "rollout:round-48",
+        "rollout:round-49"
+      ],
+      "greenIterations": 1,
+      "stableIterations": 2
+    },
+    "P-006": {
+      "id": "P-006",
+      "layer": "process",
+      "theme": "G-REFLOW P6：上级输入未核验",
+      "state": "codified",
+      "enteredAt": "2026-11-15T13:07:02.130Z",
+      "history": [
+        {
+          "from": "proposal",
+          "to": "regression",
+          "at": "2026-11-14T06:57:47.724Z",
+          "reason": "自动点火：玩具夹具 + S8 基线双前置满足",
+          "factsSnapshot": {
+            "toyFixturePassed": true,
+            "baselineCaptured": true
+          }
+        },
+        {
+          "from": "regression",
+          "to": "canary",
+          "at": "2026-11-15T09:45:41.996Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 1,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 1
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-48",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": true,
+            "projectGreenNow": false,
+            "greenLevel": "red",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "scopeDeclared": true
+          },
+          "evidence": [
+            "VERSION.md canary=P-003,P-005,P-006"
+          ]
+        },
+        {
+          "from": "canary",
+          "to": "rollout",
+          "at": "2026-11-15T09:49:47.331Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-48",
+            "canaryScopeDeclared": true,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "iteration=round-48",
+            "greenIterations=1",
+            "recorded=true"
+          ]
+        },
+        {
+          "from": "rollout",
+          "to": "codified",
+          "at": "2026-11-15T13:07:02.130Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-49",
+            "canaryScopeDeclared": true,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "bodyWritten": true,
+            "stableIterations": 2,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "grep | P6 |=true",
+            "stableIterations=2"
+          ]
+        }
+      ],
+      "fuses": [],
+      "cooldownUntil": null,
+      "evidence": [
+        "VERSION.md canary=P-003,P-005,P-006",
+        "iteration=round-48",
+        "greenIterations=1",
+        "recorded=true",
+        "grep | P6 |=true",
+        "stableIterations=2"
+      ],
+      "canarySince": "2026-11-15T09:45:41.996Z",
+      "iterationsSeen": [
+        "canary:round-48",
+        "rollout:round-48",
+        "rollout:round-49"
+      ],
+      "greenIterations": 1,
+      "stableIterations": 2
+    },
+    "P-007": {
+      "id": "P-007",
+      "layer": "process",
+      "theme": "G-REFLOW P7：激活≠驱动",
+      "state": "codified",
+      "enteredAt": "2026-11-15T13:07:02.130Z",
+      "history": [
+        {
+          "from": "proposal",
+          "to": "regression",
+          "at": "2026-11-14T06:57:47.724Z",
+          "reason": "自动点火：玩具夹具 + S8 基线双前置满足",
+          "factsSnapshot": {
+            "toyFixturePassed": true,
+            "baselineCaptured": true
+          }
+        },
+        {
+          "from": "regression",
+          "to": "canary",
+          "at": "2026-11-15T09:45:41.996Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 1,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 1
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-48",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": true,
+            "projectGreenNow": false,
+            "greenLevel": "red",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "scopeDeclared": true
+          },
+          "evidence": [
+            "VERSION.md canary=P-003,P-005,P-006,P-007"
+          ]
+        },
+        {
+          "from": "canary",
+          "to": "rollout",
+          "at": "2026-11-15T09:49:47.331Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-48",
+            "canaryScopeDeclared": true,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "iteration=round-48",
+            "greenIterations=1",
+            "recorded=true"
+          ]
+        },
+        {
+          "from": "rollout",
+          "to": "codified",
+          "at": "2026-11-15T13:07:02.130Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-49",
+            "canaryScopeDeclared": true,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "bodyWritten": true,
+            "stableIterations": 2,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "grep | P7 |=true",
+            "stableIterations=2"
+          ]
+        }
+      ],
+      "fuses": [],
+      "cooldownUntil": null,
+      "evidence": [
+        "VERSION.md canary=P-003,P-005,P-006,P-007",
+        "iteration=round-48",
+        "greenIterations=1",
+        "recorded=true",
+        "grep | P7 |=true",
+        "stableIterations=2"
+      ],
+      "canarySince": "2026-11-15T09:45:41.996Z",
+      "iterationsSeen": [
+        "canary:round-48",
+        "rollout:round-48",
+        "rollout:round-49"
+      ],
+      "greenIterations": 1,
+      "stableIterations": 2
+    },
+    "P-008": {
+      "id": "P-008",
+      "layer": "process",
+      "theme": "G-REFLOW P8：**门禁只约束别人，不约束改门禁的人（修订：自审改为交叉审计）**",
+      "state": "codified",
+      "enteredAt": "2026-11-15T13:07:02.130Z",
+      "history": [
+        {
+          "from": "proposal",
+          "to": "regression",
+          "at": "2026-11-14T06:57:47.724Z",
+          "reason": "自动点火：玩具夹具 + S8 基线双前置满足",
+          "factsSnapshot": {
+            "toyFixturePassed": true,
+            "baselineCaptured": true
+          }
+        },
+        {
+          "from": "regression",
+          "to": "canary",
+          "at": "2026-11-15T09:45:41.996Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 1,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 1
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-48",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": true,
+            "projectGreenNow": false,
+            "greenLevel": "red",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "scopeDeclared": true
+          },
+          "evidence": [
+            "VERSION.md canary=P-003,P-005,P-006,P-007,P-008"
+          ]
+        },
+        {
+          "from": "canary",
+          "to": "rollout",
+          "at": "2026-11-15T09:49:47.331Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-48",
+            "canaryScopeDeclared": true,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "iteration=round-48",
+            "greenIterations=1",
+            "recorded=true"
+          ]
+        },
+        {
+          "from": "rollout",
+          "to": "codified",
+          "at": "2026-11-15T13:07:02.130Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-49",
+            "canaryScopeDeclared": true,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "bodyWritten": true,
+            "stableIterations": 2,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "grep | P8 |=true",
+            "stableIterations=2"
+          ]
+        }
+      ],
+      "fuses": [],
+      "cooldownUntil": null,
+      "evidence": [
+        "VERSION.md canary=P-003,P-005,P-006,P-007,P-008",
+        "iteration=round-48",
+        "greenIterations=1",
+        "recorded=true",
+        "grep | P8 |=true",
+        "stableIterations=2"
+      ],
+      "canarySince": "2026-11-15T09:45:41.996Z",
+      "iterationsSeen": [
+        "canary:round-48",
+        "rollout:round-48",
+        "rollout:round-49"
+      ],
+      "greenIterations": 1,
+      "stableIterations": 2
+    },
+    "P-009": {
+      "id": "P-009",
+      "layer": "process",
+      "theme": "G-REFLOW P9：**任务书转写/合并基准语义**（指挥引用契约时把两个相反基准并成一句）",
+      "state": "codified",
+      "enteredAt": "2026-11-15T13:07:02.130Z",
+      "history": [
+        {
+          "from": "proposal",
+          "to": "regression",
+          "at": "2026-11-14T06:57:47.724Z",
+          "reason": "自动点火：玩具夹具 + S8 基线双前置满足",
+          "factsSnapshot": {
+            "toyFixturePassed": true,
+            "baselineCaptured": true
+          }
+        },
+        {
+          "from": "regression",
+          "to": "canary",
+          "at": "2026-11-15T09:45:41.997Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 1,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 1
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-48",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": true,
+            "projectGreenNow": false,
+            "greenLevel": "red",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "scopeDeclared": true
+          },
+          "evidence": [
+            "VERSION.md canary=P-003,P-005,P-006,P-007,P-008,P-009"
+          ]
+        },
+        {
+          "from": "canary",
+          "to": "rollout",
+          "at": "2026-11-15T09:49:47.331Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-48",
+            "canaryScopeDeclared": true,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "iteration=round-48",
+            "greenIterations=1",
+            "recorded=true"
+          ]
+        },
+        {
+          "from": "rollout",
+          "to": "codified",
+          "at": "2026-11-15T13:07:02.130Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-49",
+            "canaryScopeDeclared": true,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "bodyWritten": true,
+            "stableIterations": 2,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "grep | P9 |=true",
+            "stableIterations=2"
+          ]
+        }
+      ],
+      "fuses": [],
+      "cooldownUntil": null,
+      "evidence": [
+        "VERSION.md canary=P-003,P-005,P-006,P-007,P-008,P-009",
+        "iteration=round-48",
+        "greenIterations=1",
+        "recorded=true",
+        "grep | P9 |=true",
+        "stableIterations=2"
+      ],
+      "canarySince": "2026-11-15T09:45:41.997Z",
+      "iterationsSeen": [
+        "canary:round-48",
+        "rollout:round-48",
+        "rollout:round-49"
+      ],
+      "greenIterations": 1,
+      "stableIterations": 2
+    },
+    "P-011": {
+      "id": "P-011",
+      "layer": "process",
+      "theme": "G-REFLOW P11：**治理脚本重复实现 + 合规条款未机器化 + 设计依据不落盘**",
+      "state": "codified",
+      "enteredAt": "2026-11-15T09:52:48.902Z",
+      "history": [
+        {
+          "from": "proposal",
+          "to": "regression",
+          "at": "2026-11-14T06:57:47.724Z",
+          "reason": "自动点火：玩具夹具 + S8 基线双前置满足",
+          "factsSnapshot": {
+            "toyFixturePassed": true,
+            "baselineCaptured": true
+          }
+        },
+        {
+          "from": "regression",
+          "to": "canary",
+          "at": "2026-11-15T09:45:41.998Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 1,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 1
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-48",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": true,
+            "projectGreenNow": false,
+            "greenLevel": "red",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "scopeDeclared": true
+          },
+          "evidence": [
+            "VERSION.md canary=P-003,P-005,P-006,P-007,P-008,P-009,P-010,P-011"
+          ]
+        },
+        {
+          "from": "canary",
+          "to": "rollout",
+          "at": "2026-11-15T09:49:47.331Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-48",
+            "canaryScopeDeclared": true,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "iteration=round-48",
+            "greenIterations=1",
+            "recorded=true"
+          ]
+        },
+        {
+          "from": "rollout",
+          "to": "codified",
+          "at": "2026-11-15T09:52:48.902Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-49",
+            "canaryScopeDeclared": true,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "bodyWritten": true,
+            "stableIterations": 2,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "grep 组件化 / 工程化=true",
+            "stableIterations=2"
+          ]
+        }
+      ],
+      "fuses": [],
+      "cooldownUntil": null,
+      "evidence": [
+        "VERSION.md canary=P-003,P-005,P-006,P-007,P-008,P-009,P-010,P-011",
+        "iteration=round-48",
+        "greenIterations=1",
+        "recorded=true",
+        "grep 组件化 / 工程化=true",
+        "stableIterations=2"
+      ],
+      "canarySince": "2026-11-15T09:45:41.998Z",
+      "iterationsSeen": [
+        "canary:round-48",
+        "rollout:round-48",
+        "rollout:round-49"
+      ],
+      "greenIterations": 1,
+      "stableIterations": 2
+    },
+    "P-012": {
+      "id": "P-012",
+      "layer": "process",
+      "theme": "**门禁/管线自身真源未覆盖（编号映射、锚点表、章节结构、版本声明）**",
+      "state": "codified",
+      "enteredAt": "2026-11-15T14:08:48.074Z",
+      "history": [
+        {
+          "from": "proposal",
+          "to": "regression",
+          "at": "2026-11-15T13:15:58.070Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 1,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-49",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": false,
+            "projectGreenNow": false,
+            "greenLevel": "red",
+            "activeExemptions": [],
+            "noFuseInCanary": true
+          },
+          "evidence": [
+            "toy-fixture",
+            "L4-BASELINE"
+          ]
+        },
+        {
+          "from": "regression",
+          "to": "canary",
+          "at": "2026-11-15T13:15:58.071Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 1,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-49",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": true,
+            "projectGreenNow": false,
+            "greenLevel": "red",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "scopeDeclared": true
+          },
+          "evidence": [
+            "VERSION.md canary=P-012"
+          ]
+        },
+        {
+          "from": "canary",
+          "to": "rollout",
+          "at": "2026-11-15T13:27:29.909Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 21,
+                "passed": 21
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-50",
+            "canaryScopeDeclared": true,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "iteration=round-50",
+            "greenIterations=1",
+            "recorded=true"
+          ]
+        },
+        {
+          "from": "rollout",
+          "to": "codified",
+          "at": "2026-11-15T14:08:48.074Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 26,
+                "passed": 26
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 78
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-51",
+            "canaryScopeDeclared": true,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "bodyWritten": true,
+            "stableIterations": 2,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "grep | P12 |=true",
+            "stableIterations=2"
+          ]
+        }
+      ],
+      "fuses": [],
+      "cooldownUntil": null,
+      "evidence": [
+        "toy-fixture",
+        "L4-BASELINE",
+        "VERSION.md canary=P-012",
+        "iteration=round-50",
+        "greenIterations=1",
+        "recorded=true",
+        "grep | P12 |=true",
+        "stableIterations=2"
+      ],
+      "canarySince": "2026-11-15T13:15:58.071Z",
+      "iterationsSeen": [
+        "canary:round-50",
+        "rollout:round-50",
+        "rollout:round-51"
+      ],
+      "greenIterations": 1,
+      "stableIterations": 2
+    },
+    "P-013": {
+      "id": "P-013",
+      "layer": "process",
+      "theme": "进化闭环（发现→夹具→门→反哺）",
+      "state": "codified",
+      "enteredAt": "2026-11-17T06:14:38.019Z",
+      "history": [
+        {
+          "from": "proposal",
+          "to": "regression",
+          "at": "2026-11-17T06:08:48.122Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 26,
+                "passed": 26
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 96
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-70",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true
+          },
+          "evidence": [
+            "toy-fixture",
+            "L4-BASELINE"
+          ]
+        },
+        {
+          "from": "regression",
+          "to": "canary",
+          "at": "2026-11-17T06:08:48.123Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 26,
+                "passed": 26
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 96
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-70",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": true,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "scopeDeclared": true
+          },
+          "evidence": [
+            "VERSION.md canary=P-013"
+          ]
+        },
+        {
+          "from": "canary",
+          "to": "rollout",
+          "at": "2026-11-17T06:08:48.123Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 26,
+                "passed": 26
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 96
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-70",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "iteration=round-70",
+            "greenIterations=1",
+            "recorded=true"
+          ]
+        },
+        {
+          "from": "rollout",
+          "to": "codified",
+          "at": "2026-11-17T06:14:38.019Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 26,
+                "passed": 26
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 96
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-71",
+            "canaryScopeDeclared": true,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "bodyWritten": true,
+            "stableIterations": 2,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "grep | P13 |=true",
+            "stableIterations=2"
+          ]
+        }
+      ],
+      "fuses": [],
+      "cooldownUntil": null,
+      "evidence": [
+        "toy-fixture",
+        "L4-BASELINE",
+        "VERSION.md canary=P-013",
+        "iteration=round-70",
+        "greenIterations=1",
+        "recorded=true",
+        "grep | P13 |=true",
+        "stableIterations=2"
+      ],
+      "canarySince": "2026-11-17T06:08:48.123Z",
+      "iterationsSeen": [
+        "regression:round-70",
+        "canary:round-70",
+        "rollout:round-70",
+        "rollout:round-71"
+      ],
+      "greenIterations": 1,
+      "stableIterations": 2
+    },
+    "P-014": {
+      "id": "P-014",
+      "layer": "process",
+      "theme": "真源诚实与跨域反省（叙述不污染控制真源/不复验不报绿）",
+      "state": "rollout",
+      "enteredAt": "2026-11-17T06:55:40.279Z",
+      "history": [
+        {
+          "from": "proposal",
+          "to": "regression",
+          "at": "2026-11-17T06:55:40.278Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 26,
+                "passed": 26
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 96
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-71",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true
+          },
+          "evidence": [
+            "toy-fixture",
+            "L4-BASELINE"
+          ]
+        },
+        {
+          "from": "regression",
+          "to": "canary",
+          "at": "2026-11-17T06:55:40.279Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 26,
+                "passed": 26
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 96
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-71",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": true,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "scopeDeclared": true
+          },
+          "evidence": [
+            "VERSION.md canary=P-014"
+          ]
+        },
+        {
+          "from": "canary",
+          "to": "rollout",
+          "at": "2026-11-17T06:55:40.279Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 26,
+                "passed": 26
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 96
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-71",
+            "canaryScopeDeclared": false,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "iteration=round-71",
+            "greenIterations=1",
+            "recorded=true"
+          ]
+        }
+      ],
+      "fuses": [],
+      "cooldownUntil": null,
+      "evidence": [
+        "toy-fixture",
+        "L4-BASELINE",
+        "VERSION.md canary=P-014",
+        "iteration=round-71",
+        "greenIterations=1",
+        "recorded=true"
+      ],
+      "canarySince": "2026-11-17T06:55:40.279Z",
+      "iterationsSeen": [
+        "regression:round-71",
+        "canary:round-71",
+        "rollout:round-71"
+      ],
+      "greenIterations": 1,
+      "stableIterations": 1
+    },
+    "P-015": {
+      "id": "P-015",
+      "layer": "process",
+      "theme": "**钉死模型 / 违背「不限制模型」原始规约反复复发**",
+      "state": "rollout",
+      "enteredAt": "2026-11-19T07:36:50.700Z",
+      "history": [
+        {
+          "from": "proposal",
+          "to": "regression",
+          "at": "2026-11-19T07:36:50.700Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 26,
+                "passed": 26
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 96
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-71",
+            "canaryScopeDeclared": true,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true
+          },
+          "evidence": [
+            "toy-fixture",
+            "L4-BASELINE"
+          ]
+        },
+        {
+          "from": "regression",
+          "to": "canary",
+          "at": "2026-11-19T07:36:50.700Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 26,
+                "passed": 26
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 96
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-71",
+            "canaryScopeDeclared": true,
+            "canarySlotWritten": true,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "scopeDeclared": true
+          },
+          "evidence": [
+            "VERSION.md canary=P-014,P-015"
+          ]
+        },
+        {
+          "from": "canary",
+          "to": "rollout",
+          "at": "2026-11-19T07:36:50.700Z",
+          "factsSnapshot": {
+            "checks": {
+              "toyFixture": {
+                "exit": 0,
+                "checks": 26,
+                "passed": 26
+              },
+              "baseline": {
+                "hasBase": true,
+                "recordedJavaTests": 58,
+                "surefireTests": 96
+              },
+              "projectGreen": {
+                "gateResults": {
+                  "seat-utilization": 0,
+                  "audit-roster": 0,
+                  "reflow-check": 0,
+                  "stage-order": 0,
+                  "drift-check": 0
+                },
+                "resultVerify": 0,
+                "pluginTests": 0
+              }
+            },
+            "toyFixturePassed": true,
+            "baselineCaptured": true,
+            "projectIteration": "round-71",
+            "canaryScopeDeclared": true,
+            "canarySlotWritten": false,
+            "projectGreenNow": true,
+            "greenLevel": "hard-green",
+            "activeExemptions": [],
+            "noFuseInCanary": true,
+            "greenIterations": 1
+          },
+          "evidence": [
+            "iteration=round-71",
+            "greenIterations=1",
+            "recorded=true"
+          ]
+        }
+      ],
+      "fuses": [],
+      "cooldownUntil": null,
+      "evidence": [
+        "toy-fixture",
+        "L4-BASELINE",
+        "VERSION.md canary=P-014,P-015",
+        "iteration=round-71",
+        "greenIterations=1",
+        "recorded=true"
+      ],
+      "canarySince": "2026-11-19T07:36:50.700Z",
+      "iterationsSeen": [
+        "regression:round-71",
+        "canary:round-71",
+        "rollout:round-71"
+      ],
+      "greenIterations": 1,
+      "stableIterations": 1
+    }
+  }
+}

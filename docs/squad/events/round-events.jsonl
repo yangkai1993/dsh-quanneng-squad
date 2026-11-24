@@ -1,0 +1,2 @@
+{"seq":1,"ts":"2026-11-17T06:48:09.226Z","type":"ROUND_ADVANCE","from":0,"to":71,"reason":"迁移基线：从 STATE.md 末轮提取当前实际轮次（一次性迁移，之后真源=事件日志，叙述不再驱动）","actor":"migration"}
+{"seq":2,"ts":"2026-11-23T09:26:27.694Z","type":"DISCREPANCY","kind":"round-offset","detail":"事件轮次 71 vs 简报 maxRound 68 偏差 3（maxRound 口径=briefs 文件名最大号；事件日志 2026-11-17 迁移基线 0→71；一轮=一次 ROUND_ADVANCE，两口径独立计数无对齐事件；此后以事件日志为唯一真源）","actor":"captain"}

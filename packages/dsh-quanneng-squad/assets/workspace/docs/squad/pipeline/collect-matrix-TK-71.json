@@ -1,0 +1,79 @@
+{
+  "round": 71,
+  "w": "W3",
+  "generatedAt": "2026-11-23T09:30:16.921Z",
+  "total": 8,
+  "reported": 0,
+  "accepted": 0,
+  "dispatched": 0,
+  "inboxOnly": 8,
+  "silent": 0,
+  "silentSeats": [],
+  "matrix": [
+    {
+      "seat": "前端",
+      "token": "TK-71-901",
+      "state": "inbox-only",
+      "historyLen": 0,
+      "lastEventAt": null,
+      "inboxTouchedAt": "2026-11-11T06:15:01.501Z"
+    },
+    {
+      "seat": "后端",
+      "token": "TK-71-902",
+      "state": "inbox-only",
+      "historyLen": 0,
+      "lastEventAt": null,
+      "inboxTouchedAt": "2026-11-11T06:14:54.067Z"
+    },
+    {
+      "seat": "架构",
+      "token": "TK-71-903",
+      "state": "inbox-only",
+      "historyLen": 0,
+      "lastEventAt": null,
+      "inboxTouchedAt": "2026-11-11T06:15:28.084Z"
+    },
+    {
+      "seat": "测试",
+      "token": "TK-71-904",
+      "state": "inbox-only",
+      "historyLen": 0,
+      "lastEventAt": null,
+      "inboxTouchedAt": "2026-11-11T06:15:32.025Z"
+    },
+    {
+      "seat": "御史",
+      "token": "TK-71-905",
+      "state": "inbox-only",
+      "historyLen": 0,
+      "lastEventAt": null,
+      "inboxTouchedAt": "2026-11-11T06:14:58.586Z"
+    },
+    {
+      "seat": "运维",
+      "token": "TK-71-906",
+      "state": "inbox-only",
+      "historyLen": 0,
+      "lastEventAt": null,
+      "inboxTouchedAt": "2026-11-11T06:15:20.747Z"
+    },
+    {
+      "seat": "交付",
+      "token": "TK-71-907",
+      "state": "inbox-only",
+      "historyLen": 0,
+      "lastEventAt": null,
+      "inboxTouchedAt": "2026-11-11T06:15:34.276Z"
+    },
+    {
+      "seat": "需求",
+      "token": "TK-71-908",
+      "state": "inbox-only",
+      "historyLen": 0,
+      "lastEventAt": null,
+      "inboxTouchedAt": "2026-11-11T06:15:00.547Z"
+    }
+  ],
+  "honest": "状态取自事件日志 REPORT/ACCEPT（真源），inbox mtime 仅留痕旁证；质量验收由门与 captain 负责"
+}

@@ -1,0 +1,115 @@
+{
+  "name": "dsh-quanneng-squad",
+  "version": "1.20.0",
+  "description": "全能编程小队 DSH 插件：7 预设 + 16 人全编 profile + maxMembers16 + 治理资产与专家包",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "scripts",
+    "assets/canonical",
+    "assets/PACKAGE-ALLOWLIST.json",
+    "assets/PACKAGE-DENY.json",
+    "cordis.patch.yml",
+    "compatibility.json",
+    "README.md",
+    "README_ZH.md",
+    "CHANGELOG.md",
+    "!scripts/env-guard-fixture.mjs",
+    "!scripts/evolution-fixture.mjs",
+    "!scripts/proxy-gate-fixture.mjs",
+    "!scripts/source-of-truth-fixture.mjs",
+    "!scripts/update-file-index.mjs",
+    "LICENSE",
+    "SEMVER.md",
+    "dist-adapters",
+    "assets/skills"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "agent-preset",
+    "multi-agent",
+    "squad"
+  ],
+  "engines": {
+    "node": ">=22",
+    "dsh": ">=0.1.2-alpha.2"
+  },
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "verify": "node scripts/verify.mjs",
+    "doctor": "node scripts/doctor.mjs",
+    "build": "node scripts/build-patch.mjs",
+    "deploy:profile": "node scripts/install.mjs",
+    "pnpm:health": "node scripts/pnpm-health.mjs",
+    "route:health": "node scripts/route-health.mjs",
+    "sync:assets": "node scripts/sync-assets.mjs",
+    "release": "node scripts/env-guard.mjs && node scripts/sync-lib.mjs && node scripts/sync-assets.mjs && node scripts/build-patch.mjs && node scripts/memory.mjs verify && node scripts/memory.mjs export && node scripts/memory-sla.mjs && node scripts/stamp-compat.mjs && node scripts/proxy-gate-fixture.mjs && node scripts/env-guard-fixture.mjs && node scripts/source-of-truth-fixture.mjs && node scripts/evolution-fixture.mjs && node scripts/proxy-gate.mjs && node scripts/pre-verify.mjs && node scripts/verify.mjs && node scripts/run-tests.mjs && node scripts/update-file-index.mjs && node scripts/drift-check.mjs && node scripts/gate-rotation.mjs && node scripts/dispatch-guard.mjs && node scripts/lead-scope-check.mjs && node scripts/export-roster.mjs && node scripts/audit-roster.mjs && node scripts/seat-utilization.mjs && node scripts/reflow-check.mjs && node scripts/stage-order.mjs && node scripts/state-machine-gate.mjs && node scripts/result-verify.mjs && node scripts/l4/maturity.mjs && node scripts/supervise.mjs && node scripts/pulse.mjs && node scripts/l4/run.mjs && node scripts/l4/sync-ledger.mjs && node scripts/install.mjs && node scripts\\delivery\\cold-start-smoke.mjs",
+    "memory": "node scripts/memory.mjs",
+    "memory:verify": "node scripts/memory.mjs verify",
+    "memory:replay": "node scripts/memory.mjs replay",
+    "memory:cloud": "node scripts/memory.mjs cloud",
+    "memory:export": "node scripts/memory.mjs export",
+    "test": "node scripts/run-tests.mjs",
+    "test:watch": "node --test --watch tests/**/*.test.js",
+    "coverage": "node --experimental-test-coverage --test tests/**/*.test.js",
+    "sync:lib": "node scripts/sync-lib.mjs",
+    "check": "node scripts/sync-lib.mjs",
+    "audit:roster": "node scripts/audit-roster.mjs",
+    "roster:snapshot": "node scripts/export-roster.mjs",
+    "seats:utilization": "node scripts/seat-utilization.mjs",
+    "stamp:compat": "node scripts/stamp-compat.mjs",
+    "reflow:check": "node scripts/reflow-check.mjs",
+    "gate": "node scripts/seat-utilization.mjs && node scripts/audit-roster.mjs && node scripts/reflow-check.mjs",
+    "gate:explain": "node -e \"console.log('三个门：seat-utilization(16/16 必产物)、audit-roster(路由活)、reflow-check(P1~P7 已写进提示词)。豁免变量在阻断文本里。');\"",
+    "drift:check": "node scripts/update-file-index.mjs && node scripts/drift-check.mjs",
+    "result:verify": "node scripts/result-verify.mjs",
+    "user:prompt": "node -e \"console.log(require('fs').readFileSync('../../docs/squad/user-prompts/USER-ORIGINAL-PROMPT.md','utf8').split('\\n').slice(0,12).join('\\n'))\"",
+    "l4:run": "node scripts/l4/run.mjs",
+    "l4:ledger": "node scripts/l4/sync-ledger.mjs",
+    "l4:fixture": "node scripts/l4/toy-fixture.mjs",
+    "guard:dispatch": "node scripts/dispatch-guard.mjs",
+    "guard:lead": "node scripts/lead-scope-check.mjs",
+    "supervise": "node scripts/supervise.mjs",
+    "l4:maturity": "node scripts/l4/maturity.mjs",
+    "memory:sla": "node scripts/memory-sla.mjs",
+    "ctl": "node scripts/squadctl.mjs",
+    "pack": "node scripts\\delivery\\pack.mjs",
+    "pack:check": "node scripts\\delivery\\pack.mjs --check",
+    "smoke": "node scripts\\delivery\\cold-start-smoke.mjs"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-agent-preset": "*",
+    "@nanmicoder/dsh-agent-teams": "*"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-agent-preset": {
+      "optional": true
+    },
+    "@nanmicoder/dsh-agent-teams": {
+      "optional": true
+    }
+  },
+  "bin": {
+    "squadctl": "scripts/squadctl.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yg-quanneng/dsh-quanneng-squad.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yg-quanneng/dsh-quanneng-squad/issues"
+  },
+  "homepage": "https://github.com/yg-quanneng/dsh-quanneng-squad#readme"
+}

@@ -1,0 +1,21 @@
+name: CI
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+jobs:
+  verify:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: 结构自检（verify）
+        run: node packages/dsh-quanneng-squad/scripts/verify.mjs
+      - name: 单元测试（tests）
+        run: node packages/dsh-quanneng-squad/scripts/run-tests.mjs
+      - name: 发布物洁净度（pack --check）
+        run: node packages/dsh-quanneng-squad/scripts/delivery/pack.mjs --check
+      - name: 兼容诊断（doctor）
+        run: node packages/dsh-quanneng-squad/scripts/doctor.mjs

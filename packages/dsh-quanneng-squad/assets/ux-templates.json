@@ -1,0 +1,54 @@
+{
+  "version": "1.0",
+  "note": "场景模板：每个模板 {name, seat, role, domain, promptPrefix}——quickstart 自动按关键词匹配 seat 后合并 promptPrefix。",
+  "templates": [
+    {
+      "name": "fix-bug",
+      "description": "修复 bug",
+      "seat": "后端经理",
+      "role": "backend-engineer",
+      "domain": "src/",
+      "promptPrefix": "修复以下 bug，先定位根因再修复，修复后必须附复现/回归测试。"
+    },
+    {
+      "name": "write-test",
+      "description": "写测试",
+      "seat": "测试经理",
+      "role": "qa-engineer",
+      "domain": "tests/",
+      "promptPrefix": "为指定模块编写测试用例（含正向+负向），禁止 retry 掩盖 flaky。"
+    },
+    {
+      "name": "code-review",
+      "description": "代码评审",
+      "seat": "御史大夫",
+      "role": "security-auditor",
+      "domain": "(只读，不入工作区)",
+      "promptPrefix": "对指定代码变更做独立评审，三值结论（pass/needs_revision/reject）附 file:line 证据。"
+    },
+    {
+      "name": "write-doc",
+      "description": "写文档",
+      "seat": "需求经理",
+      "role": "requirements-analyst",
+      "domain": "docs/",
+      "promptPrefix": "写指定主题的文档，产出路径固定，叙述只读不改变真源。"
+    },
+    {
+      "name": "investigate",
+      "description": "查问题",
+      "seat": "采风官",
+      "role": "requirements-analyst",
+      "domain": "(只读)",
+      "promptPrefix": "调查指定问题，每条结论附来源，查不到写未查到，禁止凭空想象。"
+    },
+    {
+      "name": "add-feature",
+      "description": "新功能",
+      "seat": "架构经理",
+      "role": "sys-architect",
+      "domain": "src/",
+      "promptPrefix": "设计并实现新功能：先出契约（接口清单 file:line）再实现，P0/P1 需求零孤项。"
+    }
+  ]
+}

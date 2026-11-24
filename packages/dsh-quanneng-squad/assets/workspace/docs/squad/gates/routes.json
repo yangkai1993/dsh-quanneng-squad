@@ -1,0 +1,7 @@
+{
+  "allowed": [],
+  "dead": [],
+  "deadProviders": [],
+  "updatedAt": "2026-11-20T03:13:06.944Z",
+  "evidence": "全能小队不限制任何模型：allowed/dead/deadProviders 全空，任何 provider/model 都可用。系统不得因模型名、provider 名、额度猜测、地区猜测而拒绝派单； Availability 表仅供人参考，不作机器门禁。用户原始规约 USER-ORIGINAL-PROMPT.md:17/:31/:46。"
+}

@@ -1,0 +1,46 @@
+{
+  "plugin": "dsh-quanneng-squad",
+  "version": "1.20.0",
+  "requires": {
+    "@nanmicoder/dsh-agent-teams": ">=0.1.29",
+    "@deepseek-ai/dsh-agent-preset": "*",
+    "dsh": ">=0.1.2-alpha.2",
+    "node": ">=22"
+  },
+  "configKeys": [
+    "maxMembers",
+    "memberMaxDepth",
+    "memberProvider",
+    "stateDir",
+    "profiles"
+  ],
+  "breakingChanges": [
+    {
+      "version": "1.9.0",
+      "date": "2026-11-20",
+      "change": "派活架构切换 subagent-first：主通道从 squads_run_member/agent_teams 会话制改为主对话直接 subagent()；agent_teams/squads_run_member 降级兼容。",
+      "migration": "无需迁移；旧脚本/卡继续可用。"
+    },
+    {
+      "version": "1.10.0",
+      "date": "2026-11-23",
+      "change": "配置适配层：所有脚本经 scripts/lib/config-adapter.mjs 读 profile（不再硬编码 desktop）；install 升级时保留用户 agent-default-model 块。",
+      "migration": "无需迁移。"
+    },
+    {
+      "version": "1.12.0",
+      "date": "2026-11-23",
+      "change": "L2 交付运维层：新增 delivery/（pack/upgrade/rollback/lifecycle/cold-start-smoke）与 PACKAGE-ALLOWLIST/DENY；发布物收紧为白名单（71 文件 405KB）。",
+      "migration": "自定义资产需加入 assets/PACKAGE-ALLOWLIST.json 才随包发布。"
+    },
+    {
+      "version": "1.12.4",
+      "date": "2026-11-23",
+      "change": "R1 发布卫生：npm files 收口（workspace 快照/L4-STATE/记忆分片不再随包）；LICENSE 落地。",
+      "migration": "无需迁移；工作区运行时状态保留在工作区。"
+    }
+  ],
+  "notes": "纯 cordis bundle，无编译产物；7 preset 与已验证定义一致。",
+  "bundleVersion": "1.20.0",
+  "configSchemaVersion": "1"
+}
