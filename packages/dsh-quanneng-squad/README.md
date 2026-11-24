@@ -1,6 +1,6 @@
 # dsh-quanneng-squad
 
-![version](https://img.shields.io/badge/version-1.12.6-blue) ![node](https://img.shields.io/badge/node-%3E%3D22-green) ![license](https://img.shields.io/badge/license-MIT-lightgrey)
+[![CI](https://github.com/yangkai1993/dsh-quanneng-squad/actions/workflows/ci.yml/badge.svg)](https://github.com/yangkai1993/dsh-quanneng-squad/actions/workflows/ci.yml) ![version](https://img.shields.io/badge/version-1.20.0-blue) ![npm](https://img.shields.io/npm/v/dsh-quanneng-squad) ![node](https://img.shields.io/badge/node-%3E%3E%3D22-green) ![license](https://img.shields.io/badge/license-MIT-lightgrey)
 
 An installable, upgradable, rollback-able DSH bundle plugin: 16-member squad, 7 presets, governance assets. Zero external dependencies.
 
