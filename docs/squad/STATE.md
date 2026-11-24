@@ -1,5 +1,7 @@
 # STATE.md · 状态唯一权威（SN26 网关项目）
 
+## 2026-11-24 GitHub 授权与 push（网络受阻，本地基线就绪）
+- gh 2.96.0 在位未登录；gh auth login --web 设备码流程卡 github.com/login/device/code（主站 443 不通，api.github.com 通、无本机代理）。本地已 commit 上线基线 93cd59c（635 文件 45878 行；git 身份=仓库级 yg-quanneng/noreply；.gitignore 补 .local/）。push/npm publish 待网络（选项见 deploy/GITHUB-AUTH-DIAGNOSIS.md）。
 ## 2026-11-24 上线三腿 B1+B2+B6（1.20.0 不变号）
 - B1：package.json 补 repository/bugs/homepage（npm publish 待用户 adduser——runbook deploy/RELEASE-RUNBOOK.md）；B2：适配器刷新 1.20.0+形态验收回执 dist-adapters/claude-code/ACCEPTANCE.md（21 件/12 commands/7 agents/指纹头✅/marketplace plugins 1）；B6：FUNCTION-LEDGER gateway-java/ 退役域全部替换为 src/（dispatch-plan domains 复核无 gateway-java，concurrency safe:true recommended:3）。release exit0 verify 122/0 tests 53 hard-green。
 ## 2026-11-24 六期 1.20.0 计量激活+并行安全元+门层单测

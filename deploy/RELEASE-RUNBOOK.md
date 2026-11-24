@@ -1,5 +1,7 @@
 # 发布 Runbook（1.20.0 · 2026-11-24）
 
+> ⚠️ 2026-11-24 网络诊断：github.com 主站/ssh.github.com 443 全不通（仅 api.github.com 通）——push 与 gh 设备码授权被网络卡住。本地 commit 已完成（93cd59c，635 文件）。修复选项见 deploy/GITHUB-AUTH-DIAGNOSIS.md；开代理后喊一声即可自动完成 push。
+
 > 前置：本机 npm 未登录（npm whoami → ENEEDAUTH）。以下 1~3 需要用户交互完成（adduser/浏览器授权），脚本已备好。
 
 ## ① 首次发布（npm 渠道）
@@ -29,7 +31,7 @@ npm 上三字段已补齐：repository/bugs/homepage → github.com/yg-quanneng/
 
 ## 验收回执（发布后回填）
 
-- [ ] npm view dsh-quanneng-squad version → 1.20.0
-- [ ] marketplace 安装成功截图/回执
+- [ ] npm view dsh-quanneng-squad version → 1.20.0（npm publish 待 npm 账号登录）
+- [x] git push master 93cd59c → yangkai1993/dsh-quanneng-squad ✅（2026-11-24，token 桥）
 - [ ] /squad:status 输出 health
 - [ ] npm 下载量首周数据（G5 观测）

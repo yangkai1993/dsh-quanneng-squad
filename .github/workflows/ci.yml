@@ -11,8 +11,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: 宿主态安装（install → CI runner profile）
+        run: node packages/dsh-quanneng-squad/scripts/install.mjs
+        env:
+          HOME: ${{ runner.temp }}
+          USERPROFILE: ${{ runner.temp }}
       - name: 结构自检（verify）
         run: node packages/dsh-quanneng-squad/scripts/verify.mjs
+        env:
+          HOME: ${{ runner.temp }}
+          USERPROFILE: ${{ runner.temp }}
       - name: 单元测试（tests）
         run: node packages/dsh-quanneng-squad/scripts/run-tests.mjs
       - name: 发布物洁净度（pack --check）

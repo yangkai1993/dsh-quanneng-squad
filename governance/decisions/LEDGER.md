@@ -124,6 +124,9 @@
 - 全链：release exit 0、verify 93/0、run-tests 47/47、install 同步宿主；profile 根用户当前模型 `buddy/glm-5.3-flash` 未改动（尊重用户选择，不锁死）；版本 1.5.7→1.5.8。
 # 工作区决策账本
 
+## GitHub 授权受阻（2026-11-24）
+- 决策：push/授权须主站连通（api.github.com 不够）；不修改系统网络配置（hosts/代理须用户自己定）。git 身份以仓库级配置落地（yg-quanneng + noreply 邮箱）。
+- 事实：commit 93cd59c=上线基线；诊断留痕 deploy/GITHUB-AUTH-DIAGNOSIS.md。
 ## 上线三腿（2026-11-24）
 - 决策：B1 发布账号/远端仓库须用户交互（npm adduser+git remote push），runbook 固化 deploy/RELEASE-RUNBOOK.md；B2 形态级验收先行（真机 marketplace 待宿主环境）；B6 FUNCTION-LEDGER 退役域修正由总指挥代行（无在席成员，同 PRD 重建先例留痕）。
 - 验收：release exit0 verify 122/0 tests 53 hard-green；adapter 刷新 1.20.0 --check exit0。
