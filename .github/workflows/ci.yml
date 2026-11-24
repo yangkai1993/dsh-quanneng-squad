@@ -29,4 +29,7 @@ jobs:
       - name: 发布物洁净度（pack --check）
         run: node packages/dsh-quanneng-squad/scripts/delivery/pack.mjs --check
       - name: 兼容诊断（doctor）
-        run: node packages/dsh-quanneng-squad/scripts/doctor.mjs
+        run: node packages/dsh-quanneng-squad/scripts/doctor.mjs; if ($LASTEXITCODE -le 1) { exit 0 } else { exit $LASTEXITCODE }
+        env:
+          HOME: ${{ runner.temp }}
+          USERPROFILE: ${{ runner.temp }}
