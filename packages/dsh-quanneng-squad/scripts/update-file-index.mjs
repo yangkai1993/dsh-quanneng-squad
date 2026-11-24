@@ -4,7 +4,7 @@ import { join, relative } from 'node:path';
 // 全仓文件索引：drift-check 用它解析 file:line 引用。release 链每次重建，保证不因索引过期误报。
 
 const PKG_DIR = join(W, 'packages/dsh-quanneng-squad');
-const SKIP = new Set(['node_modules', 'target', '.git']);
+const SKIP = new Set(['node_modules', 'target', '.git', 'dist']);
 const idx = [];
 const walk = (d, base) => {
   if (!existsSync(d)) return;
