@@ -63,9 +63,12 @@ export function resolveDistFiles(source, allowlist, denylist) {
   const files = [...all].filter(f => existsSync(join(source, ...f.split("/")))).sort();
   const missing = [...all].filter(f => !existsSync(join(source, ...f.split("/")))).sort();
   const dirty = [];
+  const allowExact = new Set([...(allowlist.files || []), ...(allowlist.scripts || [])].filter(p => !p.includes('*')));
   for (const f of files) {
     const hits = denylistHit(f, denylist.patterns || []);
-    if (hits.length) dirty.push({ file: f, patterns: hits });
+    // allowlist 精确点名优先于 deny 通配（单一真源语义：allowlist 是唯一发布真源；1.20.0 toy-fixture 自证夹具回归）
+    const kept = hits.length && (allowExact.has(f) || allowExact.has(f.replace(/^scripts\//, ''))) ? [] : hits;
+    if (kept.length) dirty.push({ file: f, patterns: kept });
   }
   return { files, missing, dirty };
 }
@@ -110,10 +113,12 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
     for (const d of allow.dirs || []) walk(root, d, onDisk);
     for (const f of [...(allow.files || []), ...(allow.scripts || []).map(s => "scripts/" + s)])
       if (existsSync(join(root, ...f.split("/"))) && !onDisk.includes(f)) onDisk.push(f);
+    const allowExact = new Set([...(allow.files || []), ...(allow.scripts || [])].filter(p => !p.includes('*')));
     const diskDirty = [];
     for (const f of onDisk) {
       const hits = denylistHit(f, deny.patterns || []);
-      if (hits.length) diskDirty.push({ file: f, patterns: hits });
+      const kept = hits.length && (allowExact.has(f) || allowExact.has(f.replace(/^scripts\//, ''))) ? [] : hits; // allowlist 点名优先于 deny 通配（1.20.0 toy-fixture 自证夹具）
+      if (kept.length) diskDirty.push({ file: f, patterns: kept });
     }
     const allDirty = [...plan.dirty, ...diskDirty].filter((x,i,a) => a.findIndex(y => y.file === x.file) === i);
     const report = { gate: "pack-check", ok: !allDirty.length && !plan.missing.length, dirty: allDirty, missing: plan.missing, files: plan.files.length };

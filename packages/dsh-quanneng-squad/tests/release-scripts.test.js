@@ -168,7 +168,7 @@ describe('audit-roster does not restrict any model (user rule: squad works with 
     ];
     try {
       writeFileSync(snap, JSON.stringify({ takenAt: new Date().toISOString(), seats: models }), 'utf8');
-      const r = run(['scripts/audit-roster.mjs']);
+      const r = run(['scripts/audit-roster.mjs'], { env: { ...process.env, QUANNENG_EXPECTED_MODEL: 'any-provider/any-model' } });
       assert.equal(r.status, 0, 'audit-roster must not block any model: ' + r.stdout + r.stderr);
       const j = JSON.parse(r.stdout);
       assert.equal(j.warnings.length, 0, 'no model-related warning allowed: ' + JSON.stringify(j.warnings));

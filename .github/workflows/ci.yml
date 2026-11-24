@@ -23,6 +23,9 @@ jobs:
           USERPROFILE: ${{ runner.temp }}
       - name: 单元测试（tests）
         run: node packages/dsh-quanneng-squad/scripts/run-tests.mjs
+        env:
+          HOME: ${{ runner.temp }}
+          USERPROFILE: ${{ runner.temp }}
       - name: 发布物洁净度（pack --check）
         run: node packages/dsh-quanneng-squad/scripts/delivery/pack.mjs --check
       - name: 兼容诊断（doctor）
