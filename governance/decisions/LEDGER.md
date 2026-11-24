@@ -124,6 +124,9 @@
 - 全链：release exit 0、verify 93/0、run-tests 47/47、install 同步宿主；profile 根用户当前模型 `buddy/glm-5.3-flash` 未改动（尊重用户选择，不锁死）；版本 1.5.7→1.5.8。
 # 工作区决策账本
 
+## 收敛裁决（2026-11-24）
+- npm publish 暂停（用户裁决：无 npm 接口）；runbook §① 为唯一待办。发布物已随仓库分发（git+marketplace 产物形态），npm 渠道后补不阻塞。
+- 收敛清点：临时文件（gh/npm flow）全清；PAT 建议撤销重发；CI 3c34b0f success。
 ## GitHub 上线（2026-11-24）
 - 决策：CI=干净环境自证（install 步骤给 runner 建 HOST 态；doctor 容忍 degraded——CI 无 DSH 宿主是预期；CRLF 用 .gitattributes 根治非 checkout 参数）；pack 语义裁决=allowlist 精确点名优先于 deny 通配（toy-fixture 是自证夹具须随发布物）；audit-roster 期望路由可由 QUANNENG_EXPECTED_MODEL 注入（P15 相容——测试输入非钉死）。
 - 事实：仓 yangkai1993/dsh-quanneng-squad public；CI d617941 success；token 用后建议用户撤销重发。

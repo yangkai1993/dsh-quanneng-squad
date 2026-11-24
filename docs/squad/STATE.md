@@ -1,5 +1,7 @@
 # STATE.md · 状态唯一权威（SN26 网关项目）
 
+## 2026-11-24 收敛（上线阶段终态）
+- 用户裁决：npm 接口未通（无 npm 账号），npm publish 留待 runbook §① 后补；上线阶段其余全闭环。终态：仓 yangkai1993/dsh-quanneng-squad @ 3c34b0f（CI success）、徽章五枚在 README 双语、token 建议撤销、工作区干净全提交。
 ## 2026-11-24 GitHub 上线完成（CI 全绿）
 - PAT 授权（yangkai1993，repo+workflow）→ API 建仓 → push 基线（93cd59c）→ CI 七轮调试全绿（d617941）：①CRLF 根治 .gitattributes eol=lf ②verify 前置 install+HOME 隔离 ③file-index 排除 dist/（干净树 drift-check ENOENT）④pack allowlist 精确点名豁免 deny 通配（toy-fixture 自证夹具保留发布物）⑤audit-roster 期望路由测试化（QUANNENG_EXPECTED_MODEL 注入+profile 提示条件化）⑥doctor 步骤 cmd 吞退出码（CI 无 DSH 宿主=预期态）。徽章可挂 README。
 ## 2026-11-24 GitHub 授权与 push（网络受阻，本地基线就绪）

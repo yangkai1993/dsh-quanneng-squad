@@ -5,7 +5,7 @@
 
 > 前置：本机 npm 未登录（npm whoami → ENEEDAUTH）。以下 1~3 需要用户交互完成（adduser/浏览器授权），脚本已备好。
 
-## ① 首次发布（npm 渠道）
+## ① 首次发布（npm 渠道）〔暂停——2026-11-24 用户裁决：npm 接口未通，后补即可〕〔暂停——2026-11-24 用户裁决：npm 接口未通，后补即可〕
 
     cd packages/dsh-quanneng-squad
     npm adduser                       # 或 npm login（浏览器授权）
