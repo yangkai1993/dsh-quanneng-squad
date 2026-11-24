@@ -1,5 +1,7 @@
 # STATE.md · 状态唯一权威（SN26 网关项目）
 
+## 2026-11-24 GitHub 上线完成（CI 全绿）
+- PAT 授权（yangkai1993，repo+workflow）→ API 建仓 → push 基线（93cd59c）→ CI 七轮调试全绿（d617941）：①CRLF 根治 .gitattributes eol=lf ②verify 前置 install+HOME 隔离 ③file-index 排除 dist/（干净树 drift-check ENOENT）④pack allowlist 精确点名豁免 deny 通配（toy-fixture 自证夹具保留发布物）⑤audit-roster 期望路由测试化（QUANNENG_EXPECTED_MODEL 注入+profile 提示条件化）⑥doctor 步骤 cmd 吞退出码（CI 无 DSH 宿主=预期态）。徽章可挂 README。
 ## 2026-11-24 GitHub 授权与 push（网络受阻，本地基线就绪）
 - gh 2.96.0 在位未登录；gh auth login --web 设备码流程卡 github.com/login/device/code（主站 443 不通，api.github.com 通、无本机代理）。本地已 commit 上线基线 93cd59c（635 文件 45878 行；git 身份=仓库级 yg-quanneng/noreply；.gitignore 补 .local/）。push/npm publish 待网络（选项见 deploy/GITHUB-AUTH-DIAGNOSIS.md）。
 ## 2026-11-24 上线三腿 B1+B2+B6（1.20.0 不变号）

@@ -124,6 +124,9 @@
 - 全链：release exit 0、verify 93/0、run-tests 47/47、install 同步宿主；profile 根用户当前模型 `buddy/glm-5.3-flash` 未改动（尊重用户选择，不锁死）；版本 1.5.7→1.5.8。
 # 工作区决策账本
 
+## GitHub 上线（2026-11-24）
+- 决策：CI=干净环境自证（install 步骤给 runner 建 HOST 态；doctor 容忍 degraded——CI 无 DSH 宿主是预期；CRLF 用 .gitattributes 根治非 checkout 参数）；pack 语义裁决=allowlist 精确点名优先于 deny 通配（toy-fixture 是自证夹具须随发布物）；audit-roster 期望路由可由 QUANNENG_EXPECTED_MODEL 注入（P15 相容——测试输入非钉死）。
+- 事实：仓 yangkai1993/dsh-quanneng-squad public；CI d617941 success；token 用后建议用户撤销重发。
 ## GitHub 授权受阻（2026-11-24）
 - 决策：push/授权须主站连通（api.github.com 不够）；不修改系统网络配置（hosts/代理须用户自己定）。git 身份以仓库级配置落地（yg-quanneng + noreply 邮箱）。
 - 事实：commit 93cd59c=上线基线；诊断留痕 deploy/GITHUB-AUTH-DIAGNOSIS.md。

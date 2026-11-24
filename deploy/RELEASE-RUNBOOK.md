@@ -1,5 +1,6 @@
 # 发布 Runbook（1.20.0 · 2026-11-24）
 
+> ✅ 2026-11-24 CI 全绿（d617941：verify 122/0+tests 53+pack-check+doctor 全过）——徽章可挂。七轮 CI 调试链：CRLF→install 前置→file-index 排除 dist→allowlist 点名豁免→audit-roster 测试化→doctor 容忍。
 > ⚠️ 2026-11-24 网络诊断：github.com 主站/ssh.github.com 443 全不通（仅 api.github.com 通）——push 与 gh 设备码授权被网络卡住。本地 commit 已完成（93cd59c，635 文件）。修复选项见 deploy/GITHUB-AUTH-DIAGNOSIS.md；开代理后喊一声即可自动完成 push。
 
 > 前置：本机 npm 未登录（npm whoami → ENEEDAUTH）。以下 1~3 需要用户交互完成（adduser/浏览器授权），脚本已备好。
